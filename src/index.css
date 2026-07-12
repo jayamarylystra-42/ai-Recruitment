@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --editorial-bg: #F7F5F2;
+  --editorial-card: #FFFFFF;
+  --editorial-text: #1A1A1A;
+  --editorial-text-secondary: #4A4A4A;
+  --editorial-text-muted: #8E8A82;
+  --editorial-border: #E5E1D8;
+  --editorial-divider: #F0EEEA;
+  --editorial-accent: #D4AF37;
+  --editorial-dark: #1A1A1A;
+}
+
+.dark {
+  --editorial-bg: #141414;
+  --editorial-card: #1A1A1A;
+  --editorial-text: #EBEBEB;
+  --editorial-text-secondary: #B8B2A6;
+  --editorial-text-muted: #6B6862;
+  --editorial-border: #2E2D2B;
+  --editorial-divider: #242322;
+  --editorial-accent: #D4AF37;
+  --editorial-dark: #FFFFFF;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-edit-bg: var(--editorial-bg);
+  --color-edit-card: var(--editorial-card);
+  --color-edit-text: var(--editorial-text);
+  --color-edit-sec: var(--editorial-text-secondary);
+  --color-edit-muted: var(--editorial-text-muted);
+  --color-edit-border: var(--editorial-border);
+  --color-edit-divider: var(--editorial-divider);
+  --color-edit-accent: var(--editorial-accent);
+  --color-edit-dark: var(--editorial-dark);
+}
+
+/* Base style resets to enforce Editorial Theme */
+body {
+  background-color: var(--editorial-bg) !important;
+  color: var(--editorial-text) !important;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* ==========================================
+   GLOBAL EDITORIAL DESIGN STYLE INJECTIONS
+   ========================================== */
+
+/* 1. Global Typography: enforce elegant Editorial Serif for all headings */
+h1, h2, h3, .font-serif {
+  font-family: "Lora", Georgia, Cambria, serif !important;
+}
+
+/* 2. Page & Card Background Overrides: remove rounded-corners, glowing shadows & introduce flat borders */
+.bg-white, 
+.bg-slate-50, 
+.dark .bg-slate-900, 
+.dark .bg-slate-950, 
+.bg-slate-900/60, 
+.bg-slate-950/60 {
+  background-color: var(--editorial-card) !important;
+  border-color: var(--editorial-border) !important;
+}
+
+/* Remove rounded corners and soft drop-shadows globally */
+.rounded-xl, 
+.rounded-2xl, 
+.rounded-3xl, 
+.rounded-lg, 
+.rounded-md,
+.rounded-sm {
+  border-radius: 0px !important;
+}
+
+.shadow-sm, 
+.shadow-md, 
+.shadow-lg, 
+.shadow-xl, 
+.shadow-2xl {
+  box-shadow: none !important;
+}
+
+/* Outer layout backgrounds */
+main, .bg-slate-50, .bg-slate-950 {
+  background-color: var(--editorial-bg) !important;
+}
+
+/* 3. Global Border Styling: replace standard blue/slate borders with soft editorial gray-cream */
+.border,
+.border-slate-100, 
+.border-slate-200, 
+.border-slate-300,
+.border-slate-750,
+.border-slate-800, 
+.border-slate-850, 
+.border-slate-900 {
+  border-color: var(--editorial-border) !important;
+}
+
+.divide-slate-100 > *, 
+.divide-slate-200 > *, 
+.divide-slate-800 > *,
+.divide-[#F0EEEA] > *,
+.divide-[#F0EEEA]/40 > * {
+  border-color: var(--editorial-divider) !important;
+}
+
+/* 4. Global Inputs, Textareas, and Dropdown Select fields overrides */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea, 
+select {
+  border-radius: 0px !important;
+  background-color: var(--editorial-bg) !important;
+  color: var(--editorial-text) !important;
+  border: 1px solid var(--editorial-border) !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+textarea:focus, 
+select:focus {
+  border-color: var(--editorial-accent) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 5. Primary Action Buttons Global Editorial Override (Solid Charcoal/Black Flat Blocks) */
+.bg-indigo-600, 
+.bg-indigo-500, 
+.bg-violet-600, 
+.bg-violet-500,
+.bg-indigo-600\/10,
+.bg-emerald-600,
+.bg-emerald-500 {
+  background-color: var(--editorial-dark) !important;
+  color: var(--editorial-card) !important;
+  border-radius: 0px !important;
+  border: 1px solid var(--editorial-dark) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 10px !important;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.bg-indigo-600:hover, 
+.bg-indigo-500:hover, 
+.bg-violet-600:hover, 
+.bg-violet-500:hover,
+.bg-emerald-600:hover,
+.bg-emerald-500:hover {
+  background-color: transparent !important;
+  color: var(--editorial-text) !important;
+}
+
+/* Secondary Button Overrides */
+.border-slate-200, 
+.bg-slate-100, 
+.bg-slate-50 {
+  border-radius: 0px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* 6. Text and Indicator Overrides to match High-Contrast Gold/Charcoal */
+.text-indigo-600, 
+.text-indigo-400, 
+.text-violet-600, 
+.text-violet-400 {
+  color: var(--editorial-text) !important;
+}
+
+.bg-indigo-50, 
+.bg-indigo-950\/40, 
+.bg-violet-50, 
+.bg-violet-950\/40 {
+  background-color: var(--editorial-bg) !important;
+  border-color: var(--editorial-border) !important;
+}
+
+/* Custom scrollbars for clean print feel */
+.custom-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+.custom-scrollbar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: var(--editorial-border) !important;
+  border-radius: 0px !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: var(--editorial-text-muted) !important;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AI Recruitment Intelligence & Talent Analytics Platform",
+  "description": "An enterprise-grade, full-stack recruitment intelligence, candidate assessment, predictive business intelligence, and talent analytics platform powered by Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
